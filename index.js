@@ -12,41 +12,61 @@ console.log('The navigator\'s name is ' + hacker2 + '.')
 //Iteration 2: Conditionals
 
 if (hacker1.length > hacker2.length){
-  console.log("The driver has the longest name, it has ${hacker1.length} characters.")
+  console.log(`The driver has the longest name, it has ${hacker1.length} characters.`)
   }
   
   else if (hacker1.length === hacker2.length) {
-    console.log("Wow, you both have equally long names, "+ hacker1.length +" characters!")
+    console.log(`Wow, you both have equally long names, ${hacker1.length} characters!`)
     
   }
 
   else {
-    console.log("It seems that the navigator has the longest name, it has ${hacker2.length} characters.")
+    console.log(`It seems that the navigator has the longest name, it has ${hacker2.length} characters.`)
   }
 
 
 //Iteration 3: Loops
+
+let newHackerName = ""
+for(let i=0; i < hacker1.length; i++) {
+  newHackerName += hacker1[i].toUpperCase() + " "
+}
+console.log(newHackerName.trim())
+
+let newHacker2Name = "";
+for(let i = hacker2.length - 1; i >= 0; i--) {
+  newHacker2Name += hacker2[i]
+}
+console.log(newHacker2Name)
 
 
 console.log(hacker1.toUpperCase().split("").join(' '))
 
 console.log(hacker2.split("").reverse('').join(''))
 
-let names = [hacker1, hacker2]
+if (hacker1 > hacker2) {
+  console.log("The driver's name goes first.")
+}
+else if (hacker1 < hacker2) {
+  console.log("Yo, the navigator goes first definitely.")
+}
+else {
+  console.log("What?! You both have the same name?")
+} 
 //console.log(names.sort());
 
-function compareNames(a, b) {
+/*function compareNames(a, b) {
   if (a < b) {
-    return ("The driver's name goes first.");
+    return ("The driver's name goes first.")
   } 
   else if (a > b) {
-    return ("Yo, the navigator goes first, definitely.");
+    return ("Yo, the navigator goes first, definitely.")
   }
 
-  return ("What?! You both have the same name?");
+  return ("What?! You both have the same name?")
 }
 
-console.log(compareNames(names))
+console.log(compareNames(names))*/
 
 
 //bonus 1
@@ -59,3 +79,37 @@ console.log(longtext.split("et").length-1)
 
 
 //bonus 2
+
+
+
+
+function palindrome (text) {
+    let lowerText = ""
+    for(let i=0; i < text.length; i++) {
+      lowerText += text[i].toLowerCase()
+    }
+    console.log(lowerText)
+
+    let reverseText = "";
+    for(let i = lowerText.length - 1; i >= 0; i--) {
+      reverseText += lowerText[i]
+    }
+    console.log(reverseText)
+        
+  
+if (lowerText === reverseText){
+return text + " is a palindrome"
+}
+
+else {return text + " isn't a palindrome"}
+}
+
+
+console.log(palindrome("thomas"))
+
+  
+
+
+
+
+
